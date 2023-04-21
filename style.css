@@ -1,0 +1,102 @@
+@import url('https://fonts.googleapis.com/css2?family=Finger+Paint&display=swap');
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --primary-color: #37505c;
+    --secondary-color: aliceblue;
+}
+
+body {
+    background-color: var(--primary-color);
+    color: var(--secondary-color);
+    font-family: 'Finger Paint', cursive;
+    overflow-x: hidden;
+    max-width: 100vw;
+}
+
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.container {
+    max-height: auto;
+    margin: auto;
+    padding-block: 1rem;
+    text-transform: uppercase;
+}
+
+.btn {
+    background: #f2c14e;
+    border: none;
+    border-radius: 10px;
+    color: black;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: 700;
+    padding: 15px;
+    transition: all .2s ease;
+}
+
+.btn:hover {
+    background: rgb(13, 13, 82);
+    color: var(--secondary-color);
+    transform: scale(1.2);
+}
+
+.scores {
+    width: 50%;
+    flex-direction: row;
+    justify-content: space-between;
+    gap: 5rem;
+    font-size: 32px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto;
+
+}
+
+.boxes {
+    border-right: 2px solid;
+    border-bottom: 2px solid;
+    cursor: pointer;
+    font-size: 60px;
+    width: 130px;
+    height: 130px;
+}
+
+.boxes:nth-child(3n) {
+    border-right: none;
+}
+
+.boxes:nth-child(6)~.boxes {
+    border-bottom: none;
+}
+
+.win-box {
+    background: rgba(0, 0, 0, .5);
+}
+
+@media (max-width:767px) {
+    .container {
+        padding-block: 0;
+    }
+}
+
+@media (max-width:343px) {
+    .boxes {
+        width: 100px;
+        height: 100px;
+    }
+}
